@@ -12,7 +12,6 @@ import java.util.*;
  ***********************************************************************
  *  Status: Completed
  *
- * tmep
  */
 public class CCC12S3 {
     public static void main(String[] args) throws IOException{
