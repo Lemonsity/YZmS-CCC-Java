@@ -14,7 +14,7 @@ import java.util.*;
  *
  *  - Took in user's input
  *  - Hash Map that have the sensor display as key, and frequency as value
- *  -
+ *  - Test
  */
 public class CCC12S3 {
     public static void main(String[] args) throws IOException{
