@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 /***********************************************************************
- * Project Name: CCC16S1
+ * Project Name: CCC16S2
  *
  * Author: YZmS Lemonsity
  *
