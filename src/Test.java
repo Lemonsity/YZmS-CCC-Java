@@ -5,8 +5,10 @@ import java.io.InputStreamReader;
 public class Test {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = (int)'0';
-        System.out.print(t);
+        char[] temp = br.readLine().toCharArray();
+        for (int i = temp.length - 1; i >= 0; i--){
+            System.out.print(temp[i]);
+        }
     }
 }
 
