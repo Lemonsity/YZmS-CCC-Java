@@ -13,4 +13,5 @@ I made this repository hoping that it would inspire some people.
     That is why I try my best to document codes in this repository, hoping that it will
     make it easier for YOU, to understand
 
-
+Additional Notes:
+1. I develop using Intellij Community edition.
