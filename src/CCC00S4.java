@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.TreeSet;
 
 public class CCC00S4 {
-    public static TreeSet<Integer> possibilities = new TreeSet<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
