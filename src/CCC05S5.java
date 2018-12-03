@@ -2,61 +2,64 @@ import java.io.*;
 
 public class CCC05S5 {
 
-    public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
-        CCC05S5 C = new CCC05S5();
-        Node root;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int amount = Integer.parseInt(br.readLine());
-        int[] rankings = new int[amount];
-        rankings[0] = 1;
-        root = new Node(Integer.parseInt(br.readLine()));
-        for (int i = 1; i < amount; i++) {
-            int value = Integer.parseInt(br.readLine());
-            C.add(root, value);
-            rankings[i] = C.findRanking(root, value, 1);
+        Tree t = new Tree();
+        long sum = 0;
+        for (int i = 0; i < amount;  i++) {
+            sum += t.add(Integer.parseInt(br.readLine())) + 1;
         }
-        double sum = 0;
-        for (int i = 0; i < amount; i++) {
-            sum += rankings[i];
-        }
-        double fin = Math.round((sum * 1.00) / (amount * 1.00) * 100.00) / 100.00;
+        double fin = (double)(sum) / amount;
         System.out.printf("%.2f", fin);
     }
+}
 
-    public static class Node{
-        Node left;
-        Node right;
-        int value;
-        int toLeft;
-        int toRight;
-        public Node(int value) {
-            this.left = null;
-            this.right = null;
-            this.value = value;
-            this.toLeft = 0;
-            this.toRight = 0;
-        }
+class Node {
+    Node left, right;
+    int value;
+    int rank;
+    public Node(int value){
+        this.value = value;
+        left = null;
+        right = null;
+        rank = 0;
     }
-    public Node add(Node node, int value) {
-        if (node == null)
-            return new Node(value);
-        if (value < node.value) {
-            node.left = add(node.left, value);
-            node.toLeft += 1;
-        }
-        else if (value >= node.value) {
-            node.right = add(node.right, value);
-            node.toRight += 1;
-        }
-        return node;
+}
+
+class Tree {
+    Node root;
+    public Tree() {
+        root = null;
     }
-    public int findRanking(Node node, int value, int ranking) {
-        if (value == node.value)
-            return ranking;
-        if (value < node.value){
-            return findRanking(node.left, value, ranking + node.toRight + 1);
+    public int add(int value) {
+        int rank = 0;
+        if (root == null) {
+            root = new Node(value);
         }
-        return findRanking(node.right, value, ranking);
+        else {
+            Node n = root;
+            while (true) {
+                if (value < n.value) { // if the new value is smaller than the node comparing rn
+                    rank += n.rank + 1;
+                    if (n.left == null) {
+                        n.left = new Node(value);
+                        return rank;
+                    }
+                    else
+                        n = n.left;
+                } else { // if the new value is larger than the node comparing rn
+                    n.rank++;
+                    if (n.right == null) {
+                        n.right = new Node(value);
+                        return rank;
+                    }
+                    else
+                        n = n.right;
+                }
+            }
+        }
+        return rank;
     }
 }
 
