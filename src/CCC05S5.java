@@ -10,7 +10,7 @@ public class CCC05S5 {
         for (int i = 0; i < amount;  i++) {
             sum += t.add(Integer.parseInt(br.readLine())) + 1;
         }
-        double fin = (double)(sum) / amount;
+        double fin = Math.round(((double)(sum) / amount) * 100.0) / 100.0;
         System.out.printf("%.2f", fin);
     }
 }
@@ -62,4 +62,3 @@ class Tree {
         return rank;
     }
 }
-

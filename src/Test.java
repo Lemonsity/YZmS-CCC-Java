@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 public class Test {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int x = 8;
-        int y = 5;
-        System.out.print(x / y);
+        char a = 'A';
+        int b = 0;
+        System.out.print(String.valueOf(a) + String.valueOf(b));
     }
 }
 
