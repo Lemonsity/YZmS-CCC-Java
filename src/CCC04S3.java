@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,14 +17,14 @@ import java.util.Map;
  *
  */
 public class CCC04S3 {
-    public static Map<String, String> table = new HashMap<>();
+    private static Map<String, String> table = new HashMap<>();
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] array;
         for (char i = 'A'; i <= 'J'; i++) {
-            array = br.readLine().split(" ");
+            String[] array = br.readLine().split(" ");
             for (int j = 1; j <= 9; j++) {
-                table.put((String.valueOf(i) + String.valueOf(j)), array[j - 1] + "");
+                table.put((String.valueOf(i) + String.valueOf(j)), String.valueOf(array[j - 1]));
             }
         }
         for (char a = 'A'; a <= 'J'; a++) {
@@ -31,19 +32,20 @@ public class CCC04S3 {
                 String key = String.valueOf(a) + String.valueOf(i);
                 if (isInteger(table.get(key)))
                     System.out.print(table.get(key));
-                else if (table.get(key).equals("*"))
-                    System.out.print(table.get(key));
                 else {
-                    String sum = add(table.get(key), key);
+                    ArrayList<String> temp = new ArrayList<>();
+                    temp.add(key);
+                    String sum = add(table.get(key), temp);
                     String[] adding = sum.split(" ");
                     int intSum = 0;
                     boolean check = true; // check if the adders contain *
                     for (int j = 0; j < adding.length; j++) {
-                        if (!adding[j].equals("*"))
-                            intSum += Integer.parseInt(adding[j]);
-                        else {
+                        if (!isInteger(adding[j])) {
                             check = false;
                             break;
+                        }
+                        else {
+                            intSum += Integer.parseInt(adding[j]);
                         }
                     }
                     if (check)
@@ -59,26 +61,28 @@ public class CCC04S3 {
             }
         }
     }
-    public static String add(String value, String cell) {
+
+    public static String add(String value, ArrayList<String> cell) {
         if (isInteger(value))
             return value + " ";
-        if (value.equals("*") || value.equals(cell))
+        if (cell.contains(value))
             return "* ";
         String[] adders = value.split("\\+");
         String sum = "";
         for (int i = 0; i < adders.length; i++) {
-            sum += add(table.get(adders[i]), adders[i]);
+            cell.add(adders[i]);
+            sum += add(table.get(adders[i]), cell);
+            cell.remove(adders[i]);
         }
         return sum;
     }
 
-    public static boolean isInteger(String text) {
+    private static boolean isInteger(String text) {
         boolean check = false;
         try {
             Integer.parseInt(text);
             check = true;
         } catch (Exception e) {
-
         }
         return check;
     }
