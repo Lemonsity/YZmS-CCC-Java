@@ -15,6 +15,8 @@ import java.util.Map;
  ***********************************************************************
  *  Status: Work in Progress
  *
+ *  Works, but need faster algorithm
+ *
  */
 public class CCC04S3 {
     private static Map<String, String> table = new HashMap<>();
