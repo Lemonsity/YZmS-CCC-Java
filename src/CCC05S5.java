@@ -1,5 +1,22 @@
 import java.io.*;
-
+/**********************************************************************
+ * Project Name: CCC05S5
+ *
+ * Author: YZmS Lemonsity
+ *
+ * Date: December 9, 2018
+ *
+ * Purpose: Solving 2005 CCC S5
+ *
+ ***********************************************************************
+ *  Status: On hold
+ *
+ *  Currently the problem is done in binary tree
+ *  Unfortunately the solution is too slow.
+ *  There is also another flaw: There cannot be repeating score
+ *
+ *  Friends introduced me to binary indexed tree, which they say works better
+ */
 public class CCC05S5 {
 
     public static void main(String[] args) throws IOException {
