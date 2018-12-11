@@ -4,7 +4,7 @@ import java.io.*;
  *
  * Author: YZmS Lemonsity
  *
- * Date: Nov 24, 2018
+ * Date: Dec 11, 2018
  *
  * Purpose: Solving 2007 CCC S1
  *
