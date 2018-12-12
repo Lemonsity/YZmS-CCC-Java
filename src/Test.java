@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Test {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        char a = 'w';
+        double a  = 9.8;
         System.out.print((int)a);
     }
 }
