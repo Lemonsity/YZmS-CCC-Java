@@ -35,7 +35,7 @@ public class CCC00S4 {
         // Output
         if (least == 0) // if unreachable
             System.out.print("Roberta acknowledges defeat.");
-        else
+        else // if reachable
             System.out.printf("Roberta wins in %d strokes.", least);
     }
 
