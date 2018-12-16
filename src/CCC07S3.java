@@ -47,12 +47,12 @@ public class CCC07S3 {
             int counter = 0; // start the counter at 0, the distance between the starting student and his/her friend
             int startPoint = Integer.parseInt(inputString[0]); // The starting student, if we end up back here, we completed one loop
 
+            // We have not yet find the target, nor have we completed one circle
             // If:
             // The current friend we are on isn't the starting student      (friend != startPoint)
             //              AND
             // The current friend isn't the target                          (friend != target)
             //
-            // Then it means we have not yet find the target, nor have we completed one circle
 
             while (friend != startPoint && friend != target) {
                 friend = friends.get(friend); // Move on to the next friend
