@@ -1,4 +1,17 @@
 import java.io.*;
+/***********************************************************************
+ * Project Name: CCC10S1
+ *
+ * Author: YZmS Lemonsity
+ *
+ * Date: Dec 18, 2018
+ *
+ * Purpose: Solving 2010 CCC S1
+ *
+ ***********************************************************************
+ *  Status: Completed
+ *
+ */
 public class CCC10S1 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
