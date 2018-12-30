@@ -17,7 +17,7 @@ If you want to know more about my code, below is my email
 
 youzhang.mark.sun@gmail.com
 
-##Additional Notes:
+## Additional Notes:
 1. I develop using Intellij Community edition.
 2. All questions can be found on dmoj.ca,
    Huge shout-out to the amazing people that built the website
