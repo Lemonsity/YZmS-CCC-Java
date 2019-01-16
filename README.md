@@ -18,7 +18,7 @@ If you want to know more about my code, below is my email
 youzhang.mark.sun@gmail.com
 
 ## Additional Notes:
-1. I develop using Intellij Community edition.
+1. I develop using Intellij Community edition. All the commits and push are done straight through the IDE, it is quite convenience for a noob like me.
 2. All questions can be found on dmoj.ca,
    Huge shout-out to the amazing people that built the website
 
