@@ -6,7 +6,12 @@ import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print((int)'A');
+        int[]x = new int[10];
+        for (int i = 0; i<10; i++)
+            x[i] = 0;
+        for (int a : x)
+            a = 0;
+        for (int a : x)
+            System.out.print(a);
     }
 }
