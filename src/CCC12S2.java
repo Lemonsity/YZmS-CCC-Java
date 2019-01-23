@@ -17,14 +17,15 @@ public class CCC12S2 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] characters = br.readLine().split(""); // Split the input into characters.
         int total = 0;
-        for (int i = 0; i < characters.length / 2; i++){ // start fromt he back of the array
+        for (int i = 0; i < characters.length / 2; i++){
+            // start from the back of the array
             int a = Integer.parseInt(characters[characters.length - i * 2 - 2]); // obtain the arabic integer
             String r = characters[characters.length - i * 2 - 1]; // obtain the roman letter
             if (i == 0){
-                total += a * transfer(r); // The last 2 character are definitely adding ot the total
+                total += a * transfer(r); // The last 2 character are definitely adding to the total
             }
             else{
-                // if the roman letter closer to the back have greater value, the the one before have to be subtracted
+                // if the roman letter closer to the back have greater value, the one before have to be subtracted
                 if (transfer(r) < transfer(characters[characters.length - i * 2 + 1]))
                     total -= a * transfer(r);
                 // otherwise add to total

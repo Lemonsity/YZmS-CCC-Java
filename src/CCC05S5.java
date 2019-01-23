@@ -32,6 +32,7 @@ public class CCC05S5 {
     }
 }
 
+
 class Node {
     Node left, right;
     int value;
