@@ -6,12 +6,8 @@ import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) throws IOException {
-        int[]x = new int[10];
-        for (int i = 0; i<10; i++)
-            x[i] = 0;
-        for (int a : x)
-            a = 0;
-        for (int a : x)
-            System.out.print(a);
+        String[] array = "Test+THY".split("\\+");
+        for (String v : array)
+            System.out.print(v + "\n");
     }
 }
