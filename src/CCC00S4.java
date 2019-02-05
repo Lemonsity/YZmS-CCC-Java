@@ -57,7 +57,7 @@ public class CCC00S4 {
             for (int club : clubs) { // For each club
 
                 // Notice, because the distances array is automatically initialized with 0s
-                // Thus if distances[i - club] == 0, it means there is no way tor each that distance
+                // Thus if distances[i - club] == 0, it means there is no way to reach that distance
 
                 if ((i - club >= 0 && distances[i - club] > 0) // If we can reach a previous reachable distance
                         || i - club == 0) // Or if the distance we are on right now is the exact distance of one club
