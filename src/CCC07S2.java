@@ -38,6 +38,9 @@ public class CCC07S2 {
 
                     // We go through every possible rotation of the item
                     // If all dimensions of the item are smaller / equal to the box
+
+                    // Know this part was hard coded, since I see no reason to deal with complicated math
+
                     if ((x <= boxes[j][0] && y <= boxes[j][1] && z <= boxes[j][2])
                             || (x <= boxes[j][0] && z <= boxes[j][1] && y <= boxes[j][2])
                             || (y <= boxes[j][0] && x <= boxes[j][1] && z <= boxes[j][2])
