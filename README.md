@@ -1,4 +1,5 @@
 # YZmS-CCC-Java
+[![CodeFactor](https://www.codefactor.io/repository/github/lemonsity/yzms-ccc-java/badge)](https://www.codefactor.io/repository/github/lemonsity/yzms-ccc-java)
 
 Hi. My name is Youzhang, but you can call me Mark
 
