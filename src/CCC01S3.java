@@ -85,7 +85,7 @@ public class CCC01S3 {
                 break; // break the loop, because we found the distance to all of the vertex that are reachable
             }
             for (int i = 0; i < 26; i++) { // for each vertex
-                if (map[from][i] == true) { // if the vertex is a neighbor of the vertex with the shortest distance
+                if (map[from][i]) { // if the vertex is a neighbor of the vertex with the shortest distance
                     int temp = distance[from] + 1;
                     if (temp < distance[i]) // check if there is a shorter way to reach the neighbor
                         distance[i] = temp; // replace to new distance if it is shorter
