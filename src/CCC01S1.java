@@ -1,5 +1,20 @@
 import java.io.*;
+/***********************************************************************
+ * Project Name: CCC01S1
+ *
+ * Author: YZmS Lemonsity
+ *
+ * Date: Dec 13, 2019
+ *
+ * Purpose: Solving 2001 CCC S1
+ *
+ ***********************************************************************
+ *  Status: Completed
+ *
+ *  Basically hard code, nothing special
+ */
 public class CCC01S1 {
+
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         char[][] cards = new char[4][13];
