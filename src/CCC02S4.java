@@ -7,12 +7,13 @@ public class CCC02S4 {
         BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
         int groupSize = Integer.parseInt(br.readLine());
         int queueSize = Integer.parseInt(br.readLine());
-        String[] names = new String[queueSize];
-        int[] times = new int[queueSize];
+        String[] names = new String[queueSize + 1];
+        int[] times = new int[queueSize + 1];
         for (int i = 0; i < queueSize; i++) {
             names[i] = br.readLine();
             times[i] = Integer.parseInt(br.readLine());
         }
+        
     }
 }
 

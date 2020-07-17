@@ -30,7 +30,7 @@ public class CCC02S3 {
                         state = "right";
                     else if (k == 2)
                         state = "down";
-                    else if (k == 3)
+                    else
                         state = "left";
                     for (int l = 0; l < steps.length; l++) {
                         if (steps[l] == 'F') {
