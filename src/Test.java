@@ -23,61 +23,7 @@ import java.util.Queue;
 
 public class Test {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        boolean[][] matrix = new boolean[26][26]; // relationship matrix, row is from, column is to, so matrix[from][to]
-        String input = br.readLine();
-        ArrayList<String> roads = new ArrayList<>();
-        ArrayList<String> answerRoads = new ArrayList<>();
-        while (!input.equals("**")) { // when have more roads
-            // add road into matrix
-            char a = input.charAt(0);
-            char b = input.charAt(1);
-            matrix[a - 'A'][b - 'A'] = true;
-            matrix[b - 'A'][a - 'A'] = true;
-            roads.add(input);
-            input = br.readLine();
-        }
-        for (String s : roads) { // go through all the possible roads
-            // remove the road
-            char a = s.charAt(0);
-            char b = s.charAt(1);
-            matrix[a - 'A'][b - 'A'] = false;
-            matrix[b - 'A'][a - 'A'] = false;
-            // BFS (Breast First Search)
-            boolean reached = false; // B have not been reached yet
-            Queue<Character> queue = new LinkedList<>(); // queue for BFS
-            boolean[] gone = new boolean[26]; // the points been to
-            gone[0] = true; // start on A, so A is marked as gone
-            queue.add('A');
-            while (!queue.isEmpty()) { // when there are still possible points to go
-                char from = queue.remove(); // take a point out of the queue
-                gone[from - 'A'] = true; // mark the point as gone
-                if (from == 'B') { // if the point is B, then there is no need to check more points
-                    reached = true;
-                    break;
-                }
-                for (int to = 0; to < 26; to++) { // go through each point (call this point point P)
-                    if (matrix[from - 'A'][to] && !gone[to]) {
-                        // check if there is a road between the point we are on and point P
-                        // point P also cannot be gone yet
-                        queue.add((char) (to + 'A')); // if point meet criteria, add to queue
-                    }
-                }
-            }
-            if (!reached) { // if B was never reached
-                answerRoads.add(s); // add the road to the answer
-            }
-            // add the road back, graph is back to normal
-            a = s.charAt(0);
-            b = s.charAt(1);
-            matrix[a - 'A'][b - 'A'] = true;
-            matrix[b - 'A'][a - 'A'] = true;
-        }
-        // print answer
-        for (String s : answerRoads)
-            System.out.print(s + "\n");
-        System.out.printf("There are %d disconnecting roads.\n", answerRoads.size());
-        System.out.println("Test");
+        System.out.println(Test.class.getSimpleName());
     }
 }
 
