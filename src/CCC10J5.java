@@ -34,21 +34,21 @@ public class CCC10J5 {
         while (!queue.isEmpty()) {
             Pair coordination= queue.remove();
             int x = coordination.x, y = coordination.y;
-            int[] a1 = {-1, 1};
-            int[] a2 = {-2, 2};
-            for (int a : a1) {
-                for (int b : a2) {
-                    if (0 < x + a && x + a < 9
-                            && 0 < y + b && y + b < 9
-                            && board[x + a][y + b] == Integer.MAX_VALUE) {
-                        board[x + a][y + b] = board[x][y] + 1;
-                        queue.add(new Pair(x + a, y + b));
+            int[] i1 = {-1, 1}; // i1,2 for iterator1,2
+            int[] i2 = {-2, 2};
+            for (int c1 : i1) { // c1,2 for change1,2
+                for (int c2 : i2) {
+                    if (0 < x + c1 && x + c1 < 9
+                            && 0 < y + c2 && y + c2 < 9
+                            && board[x + c1][y + c2] == Integer.MAX_VALUE) {
+                        board[x + c1][y + c2] = board[x][y] + 1;
+                        queue.add(new Pair(x + c1, y + c2));
                     }
-                    if (0 < x + b && x + b < 9
-                            && 0 < y + a && y + a < 9
-                            && board[x + b][y + a] == Integer.MAX_VALUE) {
-                        board[x + b][y + a] = board[x][y] + 1;
-                        queue.add(new Pair(x + b, y + a));
+                    if (0 < x + c2 && x + c2 < 9
+                            && 0 < y + c1 && y + c1 < 9
+                            && board[x + c2][y + c1] == Integer.MAX_VALUE) {
+                        board[x + c2][y + c1] = board[x][y] + 1;
+                        queue.add(new Pair(x + c2, y + c1));
                     }
                 }
             }
